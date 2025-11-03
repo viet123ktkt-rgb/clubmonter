@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tài Xỉu — Casino Mini</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="wrap">
+      <div class="logo">TÀI XỈU</div>
+      <div class="balance">Số dư: <span id="balance">100000</span> ₫</div>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="game-panel">
+      <div class="left">
+        <div class="play-card">
+          <div class="title">Chọn cửa</div>
+          <div class="tx-choices">
+            <button class="btn pick" data-pick="tai">TÀI (11-17)</button>
+            <button class="btn pick" data-pick="xiu">XỈU (4-10)</button>
+          </div>
+
+          <div class="title mt">Cược tổng (4..17)</div>
+          <div class="sum-box">
+            <input id="sumTarget" type="number" min="4" max="17" placeholder="Tổng (4..17)">
+            <input id="sumBet" type="number" min="1" placeholder="Số tiền">
+            <button class="btn" id="sumBtn">Đặt cược tổng</button>
+          </div>
+
+          <div class="title mt">Cược Triple (bộ 3)</div>
+          <div class="triple-box">
+            <select id="tripleChoice">
+              <option value="1">1 - 1 - 1</option>
+              <option value="2">2 - 2 - 2</option>
+              <option value="3">3 - 3 - 3</option>
+              <option value="4">4 - 4 - 4</option>
+              <option value="5">5 - 5 - 5</option>
+              <option value="6">6 - 6 - 6</option>
+            </select>
+            <input id="tripleBet" type="number" min="1" placeholder="Số tiền">
+            <button class="btn" id="tripleBtn">Đặt Triple</button>
+          </div>
+
+          <div class="title mt">Nạp / Rút</div>
+          <div class="money-box">
+            <input id="depositAmount" type="number" min="1" placeholder="Số tiền nạp">
+            <button class="btn" id="depositBtn">Nạp</button>
+            <button class="btn danger" id="resetBtn">Reset lưu</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="table-card">
+          <div class="dice-area" id="diceArea">
+            <div class="dice" id="d1">1</div>
+            <div class="dice" id="d2">2</div>
+            <div class="dice" id="d3">3</div>
+          </div>
+
+          <div class="controls">
+            <input id="txBet" type="number" min="1" placeholder="Số tiền đặt Tài/Xỉu">
+            <button class="btn big" id="rollTxBtn">Quay Tài/Xỉu</button>
+          </div>
+
+          <div class="result" id="resultBox">Chưa có ván nào.</div>
+
+          <div class="history">
+            <div class="title">Lịch sử (gần nhất lên trên)</div>
+            <div id="historyList"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">Demo — Chỉ giải trí. Tuân thủ pháp luật nơi bạn sống.</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
